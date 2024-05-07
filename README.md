@@ -1,2 +1,0 @@
-# HomeLyf.Admin
-Admin module
