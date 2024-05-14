@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: var(--mdc-filled-text-field-container-color);
+    border: 0.2px solid rgba(0, 0, 0, 0.122);
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.button {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: linear-gradient(90deg, #83bcff, #2471d8) !important;
+}

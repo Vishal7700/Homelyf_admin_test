@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<app-side-navbar></app-side-navbar>
+
+<div class="vendors-table">
+    
+        
+        <div class="container-search">
+            <mat-form-field class="custom-mat-form-field">
+                <input type="text" matInput placeholder="Search.." (keyup)="FilterChange($event)">
+            </mat-form-field>
+        </div>
+       
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Sr.no">
+        <th mat-header-cell *matHeaderCellDef class="center"> Sr.no </th>
+        <td mat-cell *matCellDef="let vendors; let i = index" class="center" > {{ countVen(i) }} </td>
+    </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="center" > Name </th>
+            <td mat-cell *matCellDef="let vendors"  class="center" > {{vendors.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileNumber">
+            <th mat-header-cell *matHeaderCellDef class="center" > Mobile </th>
+            <td mat-cell *matCellDef="let vendors" class="center" > {{vendors.mobileNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="emailAddress">
+            <th mat-header-cell *matHeaderCellDef class="center" > Email </th>
+            <td mat-cell *matCellDef="let vendors" class="center" > {{vendors.emailAddress}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="center" > Actions </th>
+            <td mat-cell *matCellDef="let vendors" class="btn-actions"> 
+                <button mat-stroked-button color="primary">Update</button>
+                <button mat-stroked-button color="warn" (click)="deleteVendor(vendors.id)" >Delete</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>

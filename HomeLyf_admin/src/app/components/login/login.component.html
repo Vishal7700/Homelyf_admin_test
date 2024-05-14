@@ -1,0 +1,43 @@
+<div class="background"> </div>
+
+<div class="container-login">
+    <h1 class="title">HomeLyf Admin-panel</h1>
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="adminLogin(loginForm.value)">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="emailAddress" placeholder="Enter email">
+            @if (loginForm.hasError('emailAddress') && !loginForm.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+            }
+            @if (loginForm.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Enter password">
+            @if (loginForm.hasError('password') && !loginForm.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+            }
+            @if (loginForm.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="hidden">
+            <mat-label>Type</mat-label>
+            <input type="text" matInput formControlName="type">
+        </mat-form-field>
+
+        <mat-form-field class="hidden">
+            <mat-label>Location</mat-label>
+            <input type="text" matInput formControlName="location">
+        </mat-form-field>
+
+        <button mat-raised-button class="button" style="color: white;">Login</button>
+    </form>
+
+
+
+</div>
